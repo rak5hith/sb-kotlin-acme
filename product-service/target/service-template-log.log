@@ -1,0 +1,10 @@
+[INFO ] 2020-11-01 18:27:09.433 [main] ProductApplicationKt - Starting ProductApplicationKt on AHZDL5CG8304XFX with PID 19736 (C:\Users\pnl03j2q\AzureDevOps\product-service\target\classes started by pnl03j2q in C:\Users\pnl03j2q\AzureDevOps\product-service)
+[INFO ] 2020-11-01 18:27:09.522 [main] ProductApplicationKt - No active profile set, falling back to default profiles: default
+[INFO ] 2020-11-01 18:27:43.827 [main] ProductApplicationKt - Started ProductApplicationKt in 35.655 seconds (JVM running for 47.135)
+[INFO ] 2020-11-01 18:29:18.564 [http-nio-8092-exec-2] ProductController - Inside getAllProducts Controller
+[INFO ] 2020-11-03 17:51:24.189 [main] ProductApplicationKt - Starting ProductApplicationKt on AHZDL5CG8304XFX with PID 13612 (C:\Users\pnl03j2q\AzureDevOps\product-service\target\classes started by pnl03j2q in C:\Users\pnl03j2q\AzureDevOps\product-service)
+[INFO ] 2020-11-03 17:51:24.390 [main] ProductApplicationKt - No active profile set, falling back to default profiles: default
+[INFO ] 2020-11-03 17:53:05.311 [main] ProductApplicationKt - Started ProductApplicationKt in 103.998 seconds (JVM running for 138.393)
+[INFO ] 2020-11-03 17:55:39.228 [http-nio-8092-exec-6] ProductController - Inside getAllProducts Controller
+[INFO ] 2020-11-03 18:01:07.230 [main] ProductApplicationKt - Starting ProductApplicationKt on AHZDL5CG8304XFX with PID 7856 (C:\Users\pnl03j2q\AzureDevOps\product-service\target\classes started by pnl03j2q in C:\Users\pnl03j2q\AzureDevOps\product-service)
+[INFO ] 2020-11-03 18:01:07.430 [main] ProductApplicationKt - No active profile set, falling back to default profiles: default

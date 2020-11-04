@@ -1,0 +1,34 @@
+##Application Name to appear in Azure App Insights
+spring:
+  application:
+    name: product-service
+server:
+  port: 8092
+  application:
+    name: product-service
+##Properties for Prometheus End Points
+endpoints:
+  prometheus:
+    enabled: true
+management:
+  endpoints:
+    web:
+      base-path: "/api/acme/product-service/v1"
+      exposure:
+        include: "*"
+##OpenAPI To Enable
+springdoc:
+  swagger-ui.path: "/api/acme/product-service/v1/swagger-ui-custom.html"
+  api-docs.path: "/api/acme/product-service/v1/api-docs"
+##Azure Cosmos Credentials and App Insights Key
+azure:
+  cosmosdb:
+    database: acme-dev-db
+    key: BAGv9lqxMOihk0FAeMlUlyLD7dElLPAgExunSO3SkI34qlqtMPuyplZZ4ik7W8uegM6AXiyrQI5NUmaW2AdctQ==
+    uri: https://rak-dev-db.documents.azure.com:443/
+  application-insights:
+    instrumentation-key: f0807cb4-14fe-437c-ab41-6ed885735d2b
+
+service:
+  perf-urls:
+    get-model-url: "http://localhost:8092/api/acme/product-service/v1/getM"
