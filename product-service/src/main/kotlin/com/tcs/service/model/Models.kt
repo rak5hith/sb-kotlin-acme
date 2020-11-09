@@ -12,4 +12,5 @@ data class ProductModel(@Id val id: Int,
                              val productName: String,
                              val description: String,
                              val beginDate: Date,
-                             val endDate: Date)
+                             val endDate: Date,
+                             val price: Double)
