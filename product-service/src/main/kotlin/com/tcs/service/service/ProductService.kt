@@ -15,9 +15,18 @@ class ProductService(private val productContainerRepository: ProductContainerRep
                 ?: throw DataNotFoundException(ndf)
     }
 
+    fun getProductById(id: Int): ProductModel {
+        return productContainerRepository.findById(id).block()
+                ?: throw DataNotFoundException(ndf)
+    }
+
     fun saveModel(productModel: ProductModel) {
         productContainerRepository.save(productModel).block()
 
+    }
+
+    fun updateModel(productModel: ProductModel){
+        productContainerRepository.save(productModel).block()
     }
 
 
