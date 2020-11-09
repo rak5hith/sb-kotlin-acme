@@ -27,11 +27,36 @@ class ProductController(private val service: ProductService) {
      * This is a sample of the GET Endpoint
      */
     @RequestMapping(value = ["/products"], method = [RequestMethod.GET], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getAllProducts(): ResponseEntity<ServiceResponse> {
+    fun getAllProducts(): MutableList<ProductModel> {
         logger.info("Inside getAllProducts Controller")
         telemetryClient.trackEvent("URI /products is triggered");
+        return service.getAllProducts()
+    }
+
+    @RequestMapping(value = ["/products/{id}"], method = [RequestMethod.GET], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun getProductById(@PathVariable("id") id: Int ): ProductModel {
+        logger.info("Inside getProductById Controller")
+        telemetryClient.trackEvent("URI /products/{id} is triggered");
+        return  service.getProductById(id = id)
+    }
+
+    @PostMapping("/product")
+    fun saveModel(@RequestBody productModel: ProductModel): ResponseEntity<ServiceResponse>? {
+        logger.info("Inside saveModel Controller")
+        telemetryClient.trackEvent("URI POST /product is triggered");
+        service.saveModel(productModel)
         return ResponseEntity.ok(ServiceResponse("200",
-                "SUCCESS", service.getAllProducts()))
+                "SUCCESS", "Data Successfully Inserted"))
+
+    }
+
+    @PutMapping("/product")
+    fun updateModel(@RequestBody productModel: ProductModel): ResponseEntity<ServiceResponse>? {
+        logger.info("Inside updateModel Controller")
+        telemetryClient.trackEvent("URI PUT /product is triggered");
+        service.updateModel(productModel)
+        return ResponseEntity.ok(ServiceResponse("200",
+                "SUCCESS", "Data Successfully Updated"))
     }
 
     /**
@@ -48,12 +73,5 @@ class ProductController(private val service: ProductService) {
     /**
      * This is a sample of the POST Endpoint
      */
-    @PostMapping("/product")
-    fun saveModel(@RequestBody productModel: ProductModel): ResponseEntity<ServiceResponse>? {
 
-        service.saveModel(productModel)
-        return ResponseEntity.ok(ServiceResponse("200",
-                "SUCCESS", "Data Successfully Inserted"))
-
-    }
 }
